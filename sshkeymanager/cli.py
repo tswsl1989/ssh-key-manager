@@ -5,7 +5,8 @@ import shutil
 
 import sshkeymanager as skm
 
-if __name__ == "__main__":
+
+def main():
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--base", "-b", help="Base directory to search for keys", default="~/.ssh/keys"
@@ -64,3 +65,7 @@ if __name__ == "__main__":
 
             log.info(f"Moving generated file to {args.output}")
             shutil.move(tfn, output)
+
+
+if __name__ == "__main__":
+    main()
